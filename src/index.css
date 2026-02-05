@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 240 20% 3%;
+    --foreground: 195 100% 95%;
+
+    --card: 240 25% 6%;
+    --card-foreground: 195 100% 95%;
+
+    --popover: 240 25% 6%;
+    --popover-foreground: 195 100% 95%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 240 20% 3%;
+
+    --secondary: 350 100% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 15% 12%;
+    --muted-foreground: 195 30% 60%;
+
+    --accent: 350 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 350 100% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 50% 25%;
+    --input: 240 25% 10%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* MTC Theme - Cyan Blue and Red */
+    --neon-cyan: 195 100% 55%;
+    --neon-blue: 195 100% 50%;
+    --neon-red: 350 100% 55%;
+    --neon-magenta: 350 100% 55%;
+    --neon-green: 120 100% 50%;
+    --neon-yellow: 60 100% 50%;
+    --cyber-dark: 240 20% 3%;
+    --cyber-grid: 240 30% 8%;
+    
+    --glow-cyan: 0 0 20px hsl(195 100% 55% / 0.8), 0 0 40px hsl(195 100% 55% / 0.4);
+    --glow-red: 0 0 20px hsl(350 100% 55% / 0.8), 0 0 40px hsl(350 100% 55% / 0.4);
+    --glow-blue: 0 0 20px hsl(195 100% 50% / 0.8), 0 0 40px hsl(195 100% 50% / 0.4);
+
+    --sidebar-background: 240 25% 6%;
+    --sidebar-foreground: 195 100% 95%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 240 20% 3%;
+    --sidebar-accent: 240 25% 12%;
+    --sidebar-accent-foreground: 195 100% 95%;
+    --sidebar-border: 195 50% 25%;
+    --sidebar-ring: 195 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-cyber;
+  }
+}
+
+@layer utilities {
+  .font-cyber {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .font-cyber-alt {
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  .neon-text-cyan {
+    color: hsl(var(--neon-cyan));
+    text-shadow: var(--glow-cyan);
+  }
+
+  .neon-text-red {
+    color: hsl(var(--neon-red));
+    text-shadow: var(--glow-red);
+  }
+
+  .neon-text-green {
+    color: hsl(var(--neon-green));
+    text-shadow: var(--glow-green);
+  }
+
+  .neon-border-cyan {
+    border-color: hsl(var(--neon-cyan));
+    box-shadow: var(--glow-cyan), inset 0 0 20px hsl(180 100% 50% / 0.1);
+  }
+
+  .neon-border-red {
+    border-color: hsl(var(--neon-red));
+    box-shadow: var(--glow-red), inset 0 0 20px hsl(350 100% 55% / 0.1);
+  }
+
+  .cyber-grid {
+    background-image: 
+      linear-gradient(hsl(180 100% 50% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(180 100% 50% / 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(180 100% 50% / 0.03) 2px,
+      hsl(180 100% 50% / 0.03) 4px
+    );
+    pointer-events: none;
+  }
+
+  .glitch-effect {
+    animation: glitch 2s infinite;
+  }
+
+  @keyframes glitch {
+    0%, 90%, 100% {
+      transform: translate(0);
+    }
+    92% {
+      transform: translate(-2px, 1px);
+    }
+    94% {
+      transform: translate(2px, -1px);
+    }
+    96% {
+      transform: translate(-1px, 2px);
+    }
+    98% {
+      transform: translate(1px, -2px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 0.8;
+      filter: brightness(1.2);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+}
