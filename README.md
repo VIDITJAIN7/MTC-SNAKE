@@ -4,7 +4,7 @@ A cyberpunk-themed snake game built as a submission for the MTC (Microsoft Techn
 
 ## 🎮 Try It Out
 
-**Live Demo:** [Coming Soon - Vercel Link]
+**Live Demo:** [https://mtc-snake-vj.vercel.app/]
 
 ## About
 
